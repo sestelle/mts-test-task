@@ -13,5 +13,4 @@ LOGS_DATE_END = "22-05-2022"
 
 # DB
 
-CREATE_DB = True
-DATABASE_URL = "postgresql://admin:admin@localhost:5433/database"
+DATABASE_URL = ""
