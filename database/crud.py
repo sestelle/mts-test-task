@@ -1,7 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import func, and_
 
-from datetime import date
 import datetime
 
 import database.models as models
@@ -16,7 +15,7 @@ def create_order_item(db: Session, id_item: int, order_id: int, item_name: str, 
     db.refresh(order_item)
 
 
-def create_order(db: Session, order_id: int, name: str, amount: int, request_date: date):
+def create_order(db: Session, order_id: int, name: str, amount: int, request_date: datetime.date):
     order = models.Order(order_id=order_id, name=name, amount=amount, request_date=request_date)
 
     db.add(order)
@@ -36,7 +35,7 @@ def get_last_week(db: Session):
 
 # select distinct order_id from cb_order_item where order_id in (
 # select order_id from cb_order_item group by order_id
-# having count(order_id) > 3) and item_amount/item_quantity > 1000
+# having count(order_id) > 3) and item_amount > 1000
 # order by order_id
 
 

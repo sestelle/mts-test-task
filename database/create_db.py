@@ -78,8 +78,8 @@ def create_db():
 
         name = random.choice(names)
 
-        start_dt = dt.strptime(ORDERS_DATE_START, '%d-%m-%Y')
-        end_dt = dt.strptime(ORDERS_DATE_END, '%d-%m-%Y')
+        start_dt = dt.strptime(ORDERS_DATE_START, "%d-%m-%Y")
+        end_dt = dt.strptime(ORDERS_DATE_END, "%d-%m-%Y")
 
         date = dt.date(get_random_date(start_dt, end_dt))
 
